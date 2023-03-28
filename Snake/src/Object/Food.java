@@ -7,16 +7,11 @@ public class Food {
     private Location location;
 
     public Food() {
-        location = new Location(22, 10);
+        this.init();
     }
 
     public Location getLocation() {
         return location;
-    }
-
-    public void setLocation(int x, int y) {
-        location.setX(x);
-        location.setY(y);
     }
 
     public void paint(Graphics g, int l, int x, int y) {
