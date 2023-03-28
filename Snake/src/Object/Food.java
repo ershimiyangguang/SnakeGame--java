@@ -7,6 +7,7 @@ public class Food {
     private Location location;
 
     public Food() {
+        location = new Location();
         this.init();
     }
 

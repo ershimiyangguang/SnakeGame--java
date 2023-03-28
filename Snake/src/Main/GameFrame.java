@@ -109,8 +109,7 @@ public class GameFrame extends JFrame implements KeyListener {
 
 
     public void toMain() {
-        repaint();
-        collection.toStart();
+        collection.toMain();
         game_scene = GameScene.main;
     }
 

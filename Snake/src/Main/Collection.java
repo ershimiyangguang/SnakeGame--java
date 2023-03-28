@@ -29,7 +29,7 @@ public class Collection {
         option.reSize(x,y,l);
     }
 
-    public void toStart() {
+    public void toMain() {
         play.setVisible(true);
         exit.setVisible(true);
         replay.setVisible(false);
@@ -42,6 +42,7 @@ public class Collection {
         exit.setVisible(false);
         replay.setVisible(false);
         option.setVisible(false);
+        to_main.setVisible(false);
     }
 
     public void toEnd() {
