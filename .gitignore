@@ -1,5 +1,5 @@
 # Project exclude paths
 /out/
 /src/
-/.idea
+/.idea/
 /Snake/META-INF
