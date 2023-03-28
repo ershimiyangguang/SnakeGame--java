@@ -39,4 +39,9 @@ public class Food {
             if (b) break;
         }
     }
+
+    public void init() {
+        location.setX(22);
+        location.setY(10);
+    }
 }

@@ -116,7 +116,7 @@ public class GameFrame extends JFrame implements KeyListener {
 
     public void toGame() {
         collection.toGame();
-        food.setLocation(22, 10);
+        food.init();
         snake.init();
         game_scene = GameScene.game;
     }
