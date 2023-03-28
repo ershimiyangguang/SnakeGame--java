@@ -21,7 +21,7 @@ public class Main {
                     snake.move();
                     snake.checkAlive(frame);
                     if (snake.checkEat(food)) {
-                        food.NextLocation(snake, snake.getSnake_body());
+                        food.NextLocation(snake);
                         snake.grow();
                     }
                     snake.setTail();

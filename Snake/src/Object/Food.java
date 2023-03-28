@@ -19,15 +19,16 @@ public class Food {
         g.fillRect(location.getX() * l + x, location.getY() * l + y, l, l);
     }
 
-    public void NextLocation(Snake snake, Location[] snake_body) {
+    public void NextLocation(Snake snake) {
         while (true) {
             Random r = new Random();
+            Location[] body = snake.getSnake_body();
             location.setX(r.nextInt(31));
             location.setY(r.nextInt(21));
             boolean b = true;
             for (int i = 0; i < snake.getLength(); i++) {
-                if (snake_body[i].getX() == location.getX() &&
-                        snake_body[i].getY() == location.getY()) {
+                if (body[i].getX() == location.getX() &&
+                        body[i].getY() == location.getY()) {
                     b = false;
                 }
             }
