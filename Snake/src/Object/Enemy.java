@@ -3,8 +3,8 @@ package Object;
 import Main.GameFrame;
 
 public class Enemy {
-    private Location location;
-    private int damage;
+    private Location location;//位置
+    private int damage;//伤害
     //函数
 
     public Enemy() {
