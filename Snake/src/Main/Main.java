@@ -6,7 +6,6 @@ import java.util.Timer;
 import Button.Collection;
 import Object.*;
 
-//test1
 
 public class Main {
     public static void main(String[] args) {
