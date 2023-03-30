@@ -80,6 +80,9 @@ public class GameFrame extends JFrame implements KeyListener {
             g_image.clearRect(0, 0, getWidth(), getHeight());
             snake.paint(g_image, l, x, y);
             food.paint(g_image, l, x, y);
+            for (int i = 0;i < 5;i++) {
+                enemy[i].paint(g_image,l,x,y);
+            }
             g_image.setColor(Color.BLACK);
             for (int i = 0; i <= 31; i++) {
                 g_image.setColor(Color.BLACK);

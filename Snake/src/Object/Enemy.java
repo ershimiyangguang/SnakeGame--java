@@ -2,6 +2,8 @@ package Object;
 
 import Main.GameFrame;
 
+import java.awt.*;
+
 public class Enemy {
     private Location location;//位置
     private int damage;//伤害
@@ -18,5 +20,9 @@ public class Enemy {
     }
     //移动
     public void move() {
+    }
+
+    public void paint(Graphics gImage, int l, int x, int y) {
+
     }
 }
