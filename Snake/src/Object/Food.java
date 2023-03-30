@@ -14,12 +14,12 @@ public class Food {
     public Location getLocation() {
         return location;
     }
-
+    //在frame上画出food
     public void paint(Graphics g, int l, int x, int y) {
         g.setColor(Color.GREEN);
         g.fillRect(location.getX() * l + x, location.getY() * l + y, l, l);
     }
-    //
+    //食物被吃后转换位置
     public void NextLocation(Snake snake) {
         while (true) {
             Random r = new Random();
@@ -36,7 +36,7 @@ public class Food {
             if (b) break;
         }
     }
-    //重置食物
+    //重置食物位置
     public void init() {
         location.setX(22);
         location.setY(10);

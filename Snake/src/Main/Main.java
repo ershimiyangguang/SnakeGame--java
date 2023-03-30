@@ -16,7 +16,7 @@ public class Main {
             enemy[i]= new Enemy();
         }
         Button.Collection collection = new Collection();
-        GameFrame frame = new GameFrame(snake, food, collection);
+        GameFrame frame = new GameFrame(snake, food, collection,enemy);
 
 
         TimerTask task = new TimerTask() {

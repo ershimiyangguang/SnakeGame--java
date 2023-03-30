@@ -20,7 +20,9 @@ public class GameFrame extends JFrame implements KeyListener {
     private GameScene game_scene;
     private Collection collection;
 
-    public GameFrame(Snake snake, Food food, Collection collection) {
+    private Enemy[] enemy = new Enemy[1000];
+
+    public GameFrame(Snake snake, Food food, Collection collection,Enemy[] enemy) {
         super.setTitle("贪吃蛇");
 
         super.setSize(941, 664);
@@ -33,6 +35,9 @@ public class GameFrame extends JFrame implements KeyListener {
 
         this.food = food;
         this.snake = snake;
+        for (int i = 0;i < 5;i++) {
+            this.enemy[i]= enemy[i];
+        }
         this.collection = collection;
         collection.setFrame(this);
         this.toMain();
