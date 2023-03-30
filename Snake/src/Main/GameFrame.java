@@ -8,7 +8,6 @@ import java.awt.event.*;
 
 import Object.*;
 import Button.*;
-//test222
 
 
 public class GameFrame extends JFrame implements KeyListener {
