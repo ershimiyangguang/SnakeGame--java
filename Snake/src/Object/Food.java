@@ -19,7 +19,7 @@ public class Food {
         g.setColor(Color.GREEN);
         g.fillRect(location.getX() * l + x, location.getY() * l + y, l, l);
     }
-
+    //
     public void NextLocation(Snake snake) {
         while (true) {
             Random r = new Random();
@@ -36,12 +36,12 @@ public class Food {
             if (b) break;
         }
     }
-
+    //重置食物
     public void init() {
         location.setX(22);
         location.setY(10);
     }
-
+    //检测蛇是否吃到食物
     public boolean checkEat(Snake snake) {
         if (getLocation().getX() == snake.getSnake_body()[0].getX() &&
                 getLocation().getY() == snake.getSnake_body()[0].getY()) {
