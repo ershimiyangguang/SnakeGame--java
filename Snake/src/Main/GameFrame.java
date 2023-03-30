@@ -7,6 +7,7 @@ import java.awt.event.*;
 
 
 import Object.*;
+import Button.*;
 
 public class GameFrame extends JFrame implements KeyListener {
 
@@ -79,13 +80,13 @@ public class GameFrame extends JFrame implements KeyListener {
                 g_image.setColor(Color.BLACK);
                 if (i == 0 || i == 31)
                     g_image.setColor(Color.RED);
-                g_image.drawLine(i * l + x, 0 + y, i * l + x, 21 * l + y);
+                g_image.drawLine(i * l + x, y, i * l + x, 21 * l + y);
             }
             for (int i = 0; i <= 21; i++) {
                 g_image.setColor(Color.BLACK);
                 if (i == 0 || i == 21)
                     g_image.setColor(Color.RED);
-                g_image.drawLine(0 + x, i * l + y, 31 * l + x, i * l + y);
+                g_image.drawLine( x, i * l + y, 31 * l + x, i * l + y);
             }
             g.drawImage(image, 0, 0, null);
         }

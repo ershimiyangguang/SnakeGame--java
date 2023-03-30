@@ -3,6 +3,7 @@ package Main;
 import java.util.*;
 import java.util.Timer;
 
+import Button.Collection;
 import Object.*;
 
 
@@ -10,7 +11,11 @@ public class Main {
     public static void main(String[] args) {
         Food food = new Food();
         Snake snake = new Snake();
-        Collection collection = new Collection();
+        Enemy[] enemy = new Enemy[5];
+        for (int i = 0;i < 5;i++) {
+            enemy[i]= new Enemy();
+        }
+        Button.Collection collection = new Collection();
         GameFrame frame = new GameFrame(snake, food, collection);
 
 
@@ -19,8 +24,12 @@ public class Main {
             public void run() {
                 if (frame.getGameScene() == GameFrame.GameScene.game) {
                     snake.move();
+                    for (int i = 0;i < 5;i++) {
+                        enemy[i].move();
+                        enemy[i].attack(snake,frame);
+                    }
                     snake.checkAlive(frame);
-                    if (snake.checkEat(food)) {
+                    if (food.checkEat(snake)) {
                         food.NextLocation(snake);
                         snake.grow();
                     }

@@ -41,4 +41,13 @@ public class Food {
         location.setX(22);
         location.setY(10);
     }
+
+    public boolean checkEat(Snake snake) {
+        if (getLocation().getX() == snake.getSnake_body()[0].getX() &&
+                getLocation().getY() == snake.getSnake_body()[0].getY()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

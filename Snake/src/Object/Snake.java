@@ -85,14 +85,6 @@ public class Snake {
         }
     }
 
-    public boolean checkEat(Food food) {
-        if (food.getLocation().getX() == head.getX() &&
-                food.getLocation().getY() == head.getY()) {
-            return true;
-        } else {
-            return false;
-        }
-    }
 
     public void grow() {
         snake_body[length] = new Location(tail.getX(), tail.getY());

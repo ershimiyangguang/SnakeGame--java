@@ -1,6 +1,7 @@
-package Main;
+package Button;
 
 import Button.*;
+import Main.GameFrame;
 
 public class Collection {
     private Play play = new Play();
