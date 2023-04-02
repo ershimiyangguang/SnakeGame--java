@@ -9,7 +9,7 @@ import java.util.Timer;
 
 
 import Object.*;
-import Button.*;
+import ButtonCollection.*;
 
 
 public class GameFrame extends JFrame implements KeyListener {
@@ -18,11 +18,11 @@ public class GameFrame extends JFrame implements KeyListener {
 
     private int l = 30, x = 5, y = 30;
     private Image image = null;
-    private Food food;
-    private Snake snake;
+    private Food food = new Food();
+    private Snake snake = new Snake();;
     private GameScene game_scene;
-    private Collection collection;
-    private Enemy[] enemy = new Enemy[1000];
+    private ButtonCollection collection = new ButtonCollection();;
+    private Enemy[] enemy;
 
     private TimerTask task = new TimerTask() {
         @Override
@@ -48,7 +48,7 @@ public class GameFrame extends JFrame implements KeyListener {
     };
     private Timer timer = new Timer();
 
-    public GameFrame(Snake snake, Food food, Collection collection,Enemy[] enemy) {
+    public GameFrame() {
         super.setTitle("贪吃蛇");
 
         super.setSize(941, 664);
@@ -59,12 +59,10 @@ public class GameFrame extends JFrame implements KeyListener {
         super.addKeyListener(this);
         timer.scheduleAtFixedRate(task,0,200);
 
-        this.food = food;
-        this.snake = snake;
+        enemy = new Enemy[5];
         for (int i = 0;i < 5;i++) {
-            this.enemy[i]= enemy[i];
+            enemy[i]= new Enemy();
         }
-        this.collection = collection;
         collection.setFrame(this);
         this.toMain();
     }

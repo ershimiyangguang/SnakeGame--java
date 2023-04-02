@@ -1,9 +1,8 @@
-package Button;
+package ButtonCollection;
 
-import Button.*;
 import Main.GameFrame;
 
-public class Collection {
+public class ButtonCollection {
     private Play play = new Play();
     private Replay replay = new Replay();
     private Exit exit = new Exit();

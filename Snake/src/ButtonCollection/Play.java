@@ -1,14 +1,16 @@
-package Button;
+package ButtonCollection;
+
 
 import java.awt.event.*;
 
-public class Replay extends Button implements ActionListener {
-    public Replay() {
-        super.setText("重新开始(空格)");
+
+public class Play extends Button implements ActionListener {
+    public Play() {
+        super.setText("开始游戏(空格)");
         super.setWidth(6);
         super.setHeight(2);
         super.setY(1);
-        super.addActionListener(this);
+        this.addActionListener(this);
     }
 
     @Override

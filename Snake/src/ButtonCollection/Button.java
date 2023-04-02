@@ -1,4 +1,4 @@
-package Button;
+package ButtonCollection;
 
 import Main.*;
 
