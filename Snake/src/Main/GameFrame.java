@@ -20,7 +20,6 @@ public class GameFrame extends JFrame implements KeyListener {
     private Snake snake;
     private GameScene game_scene;
     private Collection collection;
-
     private Enemy[] enemy = new Enemy[1000];
 
     public GameFrame(Snake snake, Food food, Collection collection,Enemy[] enemy) {
