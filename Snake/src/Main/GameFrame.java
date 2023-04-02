@@ -67,7 +67,6 @@ public class GameFrame extends JFrame implements KeyListener {
         this.toMain();
     }
 
-
     @Override
     public void keyTyped(KeyEvent e) {
 
