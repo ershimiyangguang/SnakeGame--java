@@ -4,6 +4,8 @@ package Main;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.util.TimerTask;
+import java.util.Timer;
 
 
 import Object.*;
@@ -22,6 +24,30 @@ public class GameFrame extends JFrame implements KeyListener {
     private Collection collection;
     private Enemy[] enemy = new Enemy[1000];
 
+    private TimerTask task = new TimerTask() {
+        @Override
+        public void run() {
+            if (getGameScene() == GameFrame.GameScene.game) {
+                snake.move();
+                for (int i = 0;i < 5;i++) {
+                    enemy[i].move();
+                    enemy[i].attack(snake,GameFrame.this);
+                }
+                snake.checkAlive(GameFrame.this);
+                if (food.checkEat(snake)) {
+                    food.NextLocation(snake);
+                    snake.grow();
+                }
+                snake.setTail();
+                repaint();
+            }
+            if (isResizable()) {
+                reSize();
+            }
+        }
+    };
+    private Timer timer = new Timer();
+
     public GameFrame(Snake snake, Food food, Collection collection,Enemy[] enemy) {
         super.setTitle("贪吃蛇");
 
@@ -31,7 +57,7 @@ public class GameFrame extends JFrame implements KeyListener {
         super.setFocusable(true);
         super.setLocationRelativeTo(null);
         super.addKeyListener(this);
-
+        timer.scheduleAtFixedRate(task,0,200);
 
         this.food = food;
         this.snake = snake;
