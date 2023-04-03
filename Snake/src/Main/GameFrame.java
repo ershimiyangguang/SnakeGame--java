@@ -72,7 +72,11 @@ public class GameFrame extends JFrame implements KeyListener {
         super.setFocusable(true);
         super.setLocationRelativeTo(null);
         super.addKeyListener(this);
+
+
+        //为timer分配任务task，在0毫秒后开始，每200毫秒执行一次
         timer.scheduleAtFixedRate(task,0,200);
+
 
         enemy = new Enemy[5];
         for (int i = 0;i < 5;i++) {
