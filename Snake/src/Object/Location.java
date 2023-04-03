@@ -32,4 +32,10 @@ public class Location {
     public void setY(int y) {
         this.y = y;
     }
+
+    public boolean equal(Location location) {
+        if (location.getX()==x && location.getY()==y) return true;
+        else return false;
+    }
+
 }
