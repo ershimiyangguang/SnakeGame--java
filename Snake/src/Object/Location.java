@@ -36,7 +36,7 @@ public class Location {
         this.y = y;
     }
     //判断两个位置是否相等
-    public boolean equal(Location location) {
+    public boolean equals(Location location) {
         if (location.getX()==x && location.getY()==y) return true;
         else return false;
     }

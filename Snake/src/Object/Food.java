@@ -28,8 +28,7 @@ public class Food {
             location.setY(r.nextInt(21));
             boolean b = true;
             for (int i = 0; i < snake.getLength(); i++) {
-                if (body[i].getX() == location.getX() &&
-                        body[i].getY() == location.getY()) {
+                if (body[i].equals(location)) {
                     b = false;
                 }
             }
@@ -43,8 +42,7 @@ public class Food {
     }
     //检测蛇是否吃到食物
     public boolean checkEat(Snake snake) {
-        if (getLocation().getX() == snake.getSnake_body()[0].getX() &&
-                getLocation().getY() == snake.getSnake_body()[0].getY()) {
+        if (location.equals(snake.getSnake_body()[0])) {
             return true;
         } else {
             return false;

@@ -103,8 +103,7 @@ public class Snake {
         }
         //head与身体重合认定为撞到自己
         for (int i = 1; i < length; i++) {
-            if (snake_body[i].getX() == head.getX() &&
-                    snake_body[i].getY() == head.getY()) {
+            if (snake_body[i].equals(head)) {
                 b = false;
             }
         }
