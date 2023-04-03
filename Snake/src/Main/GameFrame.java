@@ -91,7 +91,9 @@ public class GameFrame extends JFrame implements KeyListener {
     }
 
     @Override
+    //键盘监听区
     public void keyPressed(KeyEvent e) {
+        //x为按下按键的字符的ascii值
         int x = e.getKeyCode();
         if (getGameScene() == GameFrame.GameScene.game) {
             snake.setDirection(x);
