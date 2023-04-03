@@ -53,7 +53,7 @@ public class GameFrame extends JFrame implements KeyListener {
                 repaint();
             }
             //窗体大小是否变化
-            if (isResizable()) {
+            if (isResizable()&&collection!=null) {
                 //各部分同步变化
                 reSize();
             }
