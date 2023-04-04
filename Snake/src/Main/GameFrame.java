@@ -132,7 +132,7 @@ public class GameFrame extends JFrame implements KeyListener {
                 //使用画笔g画出敌人
                 enemy[i].paint(g_image,l,x,y);
             }
-            //使用画笔g画陈网格
+            //使用画笔g画出网格
             g_image.setColor(Color.BLACK);
             for (int i = 0; i <= 31; i++) {
                 g_image.setColor(Color.BLACK);
