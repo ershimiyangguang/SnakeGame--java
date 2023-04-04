@@ -2,7 +2,7 @@
 代码的核心用一句话概括，即为定时区对逻辑区与绘图区的调用
 
 ### 一、定时区
-位于GameFrame的timertask与time。在创建对象
+位于GameFrame的timertask与timer中。在创建对象
 timertask时将逻辑区与绘图区的执行内容写入run函数，再创建timer对象用于定时
 执行timertask的任务，在gameframe的构造函数中使用
 timer.scheduleAtFixedRate(task,0,200)。使timer在0毫秒
@@ -27,6 +27,13 @@ g的使用方法在学习通5.1中有介绍，在这里列出我使用的函数
 #### 偏移值（gameframe中的x，y）
 在窗口的形状发生变化后，产生相应的偏移值
 ![偏移值](Snake%2FPicture%2Fx.png)
+
+如图所示，图中红色部分为游戏画面，当窗口被拉宽时
+为使游戏画面居中，绘制任何图像时均需要在设置横坐标时
+加上偏移值x，偏移值y也是同理。如在（50，50）处画一个
+边长为l的正方形时，函数为fillRect(50,50,l,l)
+应改为fillRect(50+x,50+y,l,l)（不知道是被拉宽
+还是拉长，因此x，y都要加）
 
 
 
