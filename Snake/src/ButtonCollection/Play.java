@@ -1,6 +1,7 @@
 package ButtonCollection;
 
 
+import javax.swing.*;
 import java.awt.event.*;
 
 
@@ -10,11 +11,18 @@ public class Play extends Button implements ActionListener {
         super.setWidth(6);
         super.setHeight(2);
         super.setY(1);
-        this.addActionListener(this);
+        super.addActionListener(this);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         getFrame().toGame();
+    }
+
+    private ImageIcon icon;
+    public void reSize(int x, int y, int l) {
+        super.reSize(x,y,l);
+        icon = IconTool.createAutoAdjustIcon("Snake/Picture/snake.png",false);
+        super.setIcon(icon);
     }
 }
