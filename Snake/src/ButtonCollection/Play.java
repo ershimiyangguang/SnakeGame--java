@@ -22,7 +22,7 @@ public class Play extends Button implements ActionListener {
     private ImageIcon icon;
     public void reSize(int x, int y, int l) {
         super.reSize(x,y,l);
-        icon = IconTool.createAutoAdjustIcon("Snake/Picture/snake.png",false);
+        icon = IconTool.createAutoAdjustIcon("Snake/Picture/start.png",false);
         super.setIcon(icon);
     }
 }
