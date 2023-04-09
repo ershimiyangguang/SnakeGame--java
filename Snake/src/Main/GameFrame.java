@@ -121,16 +121,16 @@ public class GameFrame extends JFrame implements KeyListener {
     //绘画区
     @Override
     public void paint(Graphics g) {
-        //定义一张图片
-        image = this.createImage(getWidth(), getHeight());
-        //定义此图片的画笔g_image
-        Graphics g_image = image.getGraphics();
         if (game_scene == GameScene.game) {
+            //定义一张图片
+            image = this.createImage(getWidth(), getHeight());
+            //定义此图片的画笔g_image
+            Graphics g_image = image.getGraphics();
             //使用画笔g清除画面
             g_image.clearRect(0, 0, getWidth(), getHeight());
             //使用画笔g画出蛇
             snake.paint(g_image, l, x, y);
-            camera.paint(g_image,x,y);
+            camera.paint(g_image,l,x,y);
             //使用画笔g画出食物
             food.paint(g_image, l, x, y);
             for (int i = 0;i < 5;i++) {

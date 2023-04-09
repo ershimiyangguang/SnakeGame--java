@@ -9,7 +9,7 @@ public class Camera {
 
     }
 
-    public void paint(Graphics g,int x,int y) {
+    public void paint(Graphics g,int l,int x,int y) {
 
     }
 }
