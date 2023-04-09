@@ -19,7 +19,7 @@ public class Enemy {
     public void attack(Snake snake, GameFrame frame) {
     }
     //移动
-    public void move() {
+    public void move(Snake snake) {
     }
 
     public void paint(Graphics gImage, int l, int x, int y) {
