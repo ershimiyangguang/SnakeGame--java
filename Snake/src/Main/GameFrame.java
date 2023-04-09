@@ -19,7 +19,9 @@ public class GameFrame extends JFrame implements KeyListener {
     private int l = 30, x = 5, y = 30;
     private Image image = null;
     private Food food = new Food();
-    private Snake snake = new Snake();;
+    private Snake snake = new Snake();
+
+    private Camera camera = new Camera();
     private GameScene game_scene;
     private ButtonCollection collection = new ButtonCollection();;
     private Enemy[] enemy;
@@ -32,6 +34,8 @@ public class GameFrame extends JFrame implements KeyListener {
             if (getGameScene() == GameFrame.GameScene.game) {
                 //蛇移动
                 snake.move();
+                //摄像头移动
+                camera.move(snake);
                 for (int i = 0;i < 5;i++) {
                     //敌人移动
                     enemy[i].move(snake);
@@ -126,6 +130,7 @@ public class GameFrame extends JFrame implements KeyListener {
             g_image.clearRect(0, 0, getWidth(), getHeight());
             //使用画笔g画出蛇
             snake.paint(g_image, l, x, y);
+            camera.paint(g_image,x,y);
             //使用画笔g画出食物
             food.paint(g_image, l, x, y);
             for (int i = 0;i < 5;i++) {

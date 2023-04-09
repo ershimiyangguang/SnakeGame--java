@@ -13,7 +13,7 @@ timer.scheduleAtFixedRate(task,0,200)。使timer在0毫秒
 撞到墙壁或者自己。其余的函数不在这里一一列举。
 ### 三、绘画区
 位于Gameframe的paint中。task通过调用repaint函数
-调用paint函数。在paint函数中，image为画布，g_image（g）为画笔
+调用paint函数。在paint函数中，image为画布，g_image（g）为画笔。
 g的使用方法在学习通5.1中有介绍，在这里列出我使用的函数
 #### 1. clearRect(x,y,w,h)
 清除位于（x，y），宽为w，高为h的长方形中的内容
