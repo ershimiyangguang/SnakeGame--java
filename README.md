@@ -1,6 +1,6 @@
 # 贪吃蛇游戏
 代码的核心用一句话概括，即为定时区对逻辑区与绘图区的调用
-
+https://www.yuque.com/g/yuqueyonghum72ddp/gg0tck/collaborator/join?token=zxeMMRaP9qUqm1cU# 邀请你共同编辑知识库《snake》
 ### 一、定时区
 位于GameFrame的timertask与timer中。在创建对象
 timertask时将逻辑区与绘图区的执行内容写入run函数，再创建timer对象用于定时
