@@ -16,16 +16,16 @@ public class Food {
     }
 
     //在frame上画出food
-    public void paint(Graphics g, int l, int x, int y) {
+    public void paint(Graphics g, int l, int x, int y,Camera c) {
         g.setColor(Color.BLUE);
         if(counts==5)
         {
             for(int i=0;i<foods.length;i++) {
-                g.fillRect(foods[i].x * l + x, foods[i].y * l + y, l, l);
+                g.fillRect((foods[i].x )* l + x, (foods[i].y) * l + y, l, l);
             }
         }
         else {
-            g.fillRect(location.getX() * l + x, location.getY() * l + y, l, l);
+            g.fillRect((location.getX()-c.getLocation().getX()) * l + x, (location.getY()-c.getLocation().getY()) * l + y, l, l);
         }
     }
     //食物被吃后转换位置

@@ -132,7 +132,7 @@ public class GameFrame extends JFrame implements KeyListener {
             snake.paint(g_image, l, x, y);
             camera.paint(g_image,l,x,y);
             //使用画笔g画出食物
-            food.paint(g_image, l, x, y);
+            food.paint(g_image, l, x, y,camera);
             for (int i = 0;i < 5;i++) {
                 //使用画笔g画出敌人
                 enemy[i].paint(g_image,l,x,y);
