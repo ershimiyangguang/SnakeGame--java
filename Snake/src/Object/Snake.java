@@ -49,13 +49,13 @@ public class Snake {
             //下面也是用同样的方法画图
             g.fillRect(x * l + a, y * l + b, l, l);
         }
-        g.setColor(Color.white);
+       g.setColor(Color.white);
         x = snake_body[0].getX();
         y = snake_body[0].getY();
         g.fillRect(x * l + a + l / 4 + 1, y * l + b + l / 4 + 1, l / 2, l / 2);
         g.setColor(Color.black);
         x = snake_body[0].getX();
-        y = snake_body[0].getY();
+         y = snake_body[0].getY();
         g.fillRect(x * l + a + l / 3 + 1, y * l + b + l / 3 + 1, l / 4, l / 4);
     }
     //定向函数
