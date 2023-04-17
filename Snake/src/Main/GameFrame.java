@@ -19,10 +19,12 @@ public class GameFrame extends JFrame implements KeyListener {
     private int l = 30, x = 5, y = 30;
     private Image image = null;
     private Food food = new Food();
-    private Snake snake = new Snake();;
+    private Snake snake = new Snake();
+
+    private Camera camera = new Camera();
     private GameScene game_scene;
     private ButtonCollection collection = new ButtonCollection();;
-    private Enemy[] enemy=new Enemy[5];
+    private Enemy[] enemy;
     //定时区，定义timertask对象设置定时任务，再定义timer对象定时执行该任务
     private TimerTask task = new TimerTask() {
         //执行任务内容
@@ -32,11 +34,13 @@ public class GameFrame extends JFrame implements KeyListener {
             if (getGameScene() == GameFrame.GameScene.game) {
                 //蛇移动
                 snake.move();
-                for (int i = 0;i < 1;i++) {
+                //摄像头移动
+                camera.move(snake);
+                for (int i = 0;i < 5;i++) {
                     //敌人移动
                     enemy[i].move(snake);
                     //敌人攻击
-                    enemy[i].attack(snake,GameFrame.this,x,y,l);
+                    enemy[i].attack(snake,GameFrame.this);
                 }
                 //检测蛇是否撞到墙壁或者自己
                 snake.checkAlive(GameFrame.this);
@@ -117,18 +121,19 @@ public class GameFrame extends JFrame implements KeyListener {
     //绘画区
     @Override
     public void paint(Graphics g) {
-        //定义一张图片
-        image = this.createImage(getWidth(), getHeight());
-        //定义此图片的画笔g_image
-        Graphics g_image = image.getGraphics();
         if (game_scene == GameScene.game) {
+            //定义一张图片
+            image = this.createImage(getWidth(), getHeight());
+            //定义此图片的画笔g_image
+            Graphics g_image = image.getGraphics();
             //使用画笔g清除画面
             g_image.clearRect(0, 0, getWidth(), getHeight());
             //使用画笔g画出蛇
             snake.paint(g_image, l, x, y);
+            camera.paint(g_image,l,x,y);
             //使用画笔g画出食物
             food.paint(g_image, l, x, y);
-            for (int i = 0;i < 1;i++) {
+            for (int i = 0;i < 5;i++) {
                 //使用画笔g画出敌人
                 enemy[i].paint(g_image,l,x,y);
             }

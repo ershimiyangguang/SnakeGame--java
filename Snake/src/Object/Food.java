@@ -11,12 +11,9 @@ public class Food {
         this.init();
     }
 
-    public Location getLocation() {
-        return location;
-    }
     //在frame上画出food
     public void paint(Graphics g, int l, int x, int y) {
-        g.setColor(Color.GREEN);
+        g.setColor(Color.BLUE);
         g.fillRect(location.getX() * l + x, location.getY() * l + y, l, l);
     }
     //食物被吃后转换位置
