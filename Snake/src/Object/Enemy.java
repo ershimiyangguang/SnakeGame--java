@@ -19,7 +19,7 @@ public class Enemy {
         init();
     }
     //重置敌人位置与伤害
-    private void init() {
+    public void init() {
         Random r =new Random();
         location.setX(r.nextInt(31));
         location.setY(r.nextInt(21));   //随机生成敌人的位置
@@ -116,13 +116,16 @@ public class Enemy {
                 location.setY(location.getY()+1);
 
             }
+
         }
+
     }
 
     public void paint(Graphics gImage, int l, int x, int y) {
-        if(location.getX()>=0&&location.getY()>=0)
+        if(location.getX()>=0&&location.getX()<=31&&location.getY()>=0&&location.getY()<=21)
+        {
         gImage.setColor(Color.BLACK);
-        gImage.fillRect((location.getX()*l)+x,(location.getY()*l+y),l,l);
+        gImage.fillRect((location.getX()*l)+x,(location.getY()*l+y),l,l);}
 
     }
 }
