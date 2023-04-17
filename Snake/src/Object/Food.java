@@ -6,6 +6,13 @@ import java.util.Random;
 public class Food {
     private Location location;
 
+    public void setLocation(Location location) {
+        this.location = location;
+    }
+    public Location getLocation() {
+        return location;
+    }
+
     public Food() {
         location = new Location();
         this.init();

@@ -35,7 +35,7 @@ public class GameFrame extends JFrame implements KeyListener {
                 //蛇移动
                 snake.move();
                 //摄像头移动
-                camera.move(snake);
+                camera.move(snake,food);
                 for (int i = 0;i < 5;i++) {
                     //敌人移动
                     enemy[i].move(snake);

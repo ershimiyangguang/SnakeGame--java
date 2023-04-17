@@ -7,15 +7,15 @@ import Main.*;
 public class Snake {
     public enum Direction {up, down, left, right}
     //蛇身体每一个位置的坐标
-    private Location[] snake_body = new Location[1000];
+    public static Location[] snake_body = new Location[1000];
     //头部位置
-    private Location head;
+    public static Location head;
     //尾部位置
-    private Location tail;
+    public static Location tail;
     //长度
-    private int length;
+    public static int length;
     //蛇头朝向
-    private Direction direction;
+    public static Direction direction;
     //构造函数
     public Snake() {
         //初始化蛇的各属性
@@ -26,9 +26,9 @@ public class Snake {
         //长度改为2
         length = 2;
         //设置第一节关节坐标
-        snake_body[0] = new Location(8, 10);
+        snake_body[0] = new Location(13, 10);
         //设置第二节关节坐标
-        snake_body[1] = new Location(7, 10);
+        snake_body[1] = new Location(12, 10);
         //设置头部坐标
         head = snake_body[0];
         //设置尾部坐标
@@ -132,5 +132,18 @@ public class Snake {
     public int getLength() {
         return length;
     }
+
+    public void setLength(int length) {
+        this.length = length;
+    }
+
+    public Direction getDirection() {
+        return direction;
+    }
+
+    public void setDirection(Direction direction) {
+        this.direction = direction;
+    }
+
 
 }
