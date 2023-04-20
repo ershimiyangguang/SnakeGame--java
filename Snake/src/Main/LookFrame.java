@@ -1,13 +1,11 @@
 package Main;
 
-import ButtonCollection.Button;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class lookFrame extends JFrame{
+public class LookFrame extends JFrame{
 
     JFrame lookFrame=new JFrame();
     Box box0=Box.createVerticalBox();

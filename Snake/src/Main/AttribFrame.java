@@ -2,9 +2,8 @@ package Main;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.Enumeration;
 
-public class attribFrame extends JFrame {
+public class AttribFrame extends JFrame {
     JFrame attribFrame=new JFrame();
     Box box0=Box.createVerticalBox();
     Box box1=Box.createHorizontalBox();

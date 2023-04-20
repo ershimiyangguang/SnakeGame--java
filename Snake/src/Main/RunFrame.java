@@ -2,7 +2,7 @@ package Main;
 
 import javax.swing.*;
 
-public class runFrame extends JFrame {
+public class RunFrame extends JFrame {
 
     JFrame runFrame=new JFrame();
 
