@@ -6,8 +6,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class LookFrame extends JFrame{
-    //为什么要在LookFrame类里再创建一个LookFrame对象
-    //要在窗体里添加控件使用getContentpane就可以了
+
     JFrame lookFrame=new JFrame();
     Box box0=Box.createVerticalBox();
     Box box1=Box.createHorizontalBox();

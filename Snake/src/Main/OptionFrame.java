@@ -7,6 +7,9 @@ import java.awt.event.ActionListener;
 
 public class OptionFrame extends JFrame {
     //把setFrame删除了，好像没有什么用
+    //为什么要在JFrame类里再创建一个JFrame对象
+    //要在窗体里添加控件使用getContentpane就可以了
+
     //使用JButton而不使用Button，更好用
     JButton lookBtn=new JButton("外观");
     JButton runBtn=new JButton("操作");
