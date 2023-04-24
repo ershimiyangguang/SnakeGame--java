@@ -124,6 +124,9 @@ public class Snake {
         tail.setX(snake_body[length - 1].getX());
         tail.setY(snake_body[length - 1].getY());
     }
+    public void setLength(int length){
+        this.length=length;
+    }
     //获得蛇关节的坐标数组
     public Location[] getSnake_body() {
         return snake_body;

@@ -14,7 +14,6 @@ public class Enemy {
     }
     //重置敌人位置与伤害
     private void init() {
-        //location = new Location();
     }
     //攻击蛇
     public void attack(Snake snake, GameFrame frame) {
