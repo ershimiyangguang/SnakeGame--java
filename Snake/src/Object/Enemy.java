@@ -8,11 +8,14 @@ import java.awt.Rectangle;
 
 public class Enemy {
     private Location location=new Location();//位置
-    public enum Enemystate{attack,escape}   //敌人的状态
+    public enum Enemystate{attack,escape,wait}   //敌人的状态
     public Enemystate enemystate;
     boolean  attack_direction; //攻击的方向
     int escape_direction;  //逃跑的方向
-    private int damage;//伤害
+    Rectangle []attack_range =new Rectangle[5];
+
+    private int damage;
+    //伤害
     //函数
 
     public Enemy() {
@@ -30,18 +33,18 @@ public class Enemy {
     }
     //攻击蛇
     public void attack(Snake snake, GameFrame frame,int x,int y,int l) {
-        if(enemystate==Enemystate.attack) {    //当敌人状态为攻击时，判断敌人是否攻击到蛇
-            Rectangle r = new Rectangle(location.getX() * l + x, location.getY() * l + y, 30, 30);
-            Location location1[] = new Location[1000];
-            location1 = snake.getSnake_body();
-            for (int i = 0; i < snake.getLength(); i++) {
-                if (r.contains(location1[i].getX() * l + x, location1[i].getY() * l + y, l, l)) {
+        if(enemystate==Enemystate.attack) {    //当敌人状态为攻击时，判断敌人是否攻击到蛇//
+             for (int i = 0; i < snake.getLength(); i++) {
+                if (detection(location,snake.getSnake_body(),l)) {
                     snake.setLength(snake.getLength() - 1);//如果攻击到蛇，则蛇的长度-1，并且敌人的状态改为逃跑
                     enemystate =Enemystate. escape;
                     break;
 
                 }
             }
+
+        }
+        else if(enemystate==Enemystate.escape){
 
         }
 
@@ -99,7 +102,7 @@ public class Enemy {
             }
 
         }
-        else{    //如果敌人状态逃跑
+        else if(enemystate==Enemystate.escape){    //如果敌人状态逃跑
             if(escape_direction==1)
             {
                 location.setX(location.getX()-1);
@@ -118,14 +121,68 @@ public class Enemy {
             }
 
         }
+        else{
+            Location location2[] = new Location[1000];
+            location2 = snake.getSnake_body();
+            Rectangle r = new Rectangle((location.getX()-4)*30,(location.getY()-4),30,30);
+            if(r.contains(location2[0].getX(),location2[0].getY())){
+                enemystate=Enemystate.attack;
+            }
+        }
 
     }
+     public boolean detection (Location enemy,Location [] snake,int l) {
+         if (enemystate == Enemystate.attack) {
+             for (int i = 0; i < 5; i++) {
+                 attack_range[i].x = enemy.getX() * l;
+                 attack_range[i].y = enemy.getY() * l;
+                 attack_range[i].height = l;
+                 attack_range[i].width = l;
+             }
+             attack_range[1].y = (enemy.getY() - 1) * l;
+             attack_range[2].y = (enemy.getY() + 1) * l;
+             attack_range[3].x = (enemy.getX() - 1) * l;
+             attack_range[4].x = (enemy.getX() + 1) * l;
+             for (int i = 1; i < 5; i++) {
+                 for (int j = 0; j < snake.length; j++)
+                     if (attack_range[i].contains(snake[j].getX() * l, snake[j].getY() * l, l, l)) {
+                         return true;
+                     }
+             }
 
-    public void paint(Graphics gImage, int l, int x, int y) {
+
+         }
+         else if(enemystate==Enemystate.escape){
+            Rectangle r=new Rectangle(location.getX()*l,location.getY(),l,l) ;
+            for(int i=0;i<snake.length;i++){
+                if(r.contains(snake[i].getX(),snake[i].getY(),l,l))
+                    return true;
+            }
+
+         }
+         return false;
+
+     }
+
+    public void paint(Graphics gImage, int x, int y, int l, Snake snake) {
         if(location.getX()>=0&&location.getX()<=31&&location.getY()>=0&&location.getY()<=21)
         {
         gImage.setColor(Color.BLACK);
         gImage.fillRect((location.getX()*l)+x,(location.getY()*l+y),l,l);}
 
+        if (enemystate ==Enemystate. attack){
+            Location location1[] = new Location[1000];
+            location1 = snake.getSnake_body();
+            Rectangle r = new Rectangle((location.getX()-4)*l,(location.getY()-4)+y,l,l);
+            if(r.contains(location1[0].getX(),location1[0].getY())){
+                gImage.setColor(Color.red);
+                for(int i=1;i<5;i++){
+                    gImage.fillRect((int)attack_range[i].getX()+x,(int) attack_range[i].getY()+y,l,l);
+                }
+            }
+        }
+
     }
+
+
 }
