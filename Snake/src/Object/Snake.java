@@ -37,7 +37,7 @@ public class Snake {
         direction = Direction.right;
     }
 
-    public void paint(Graphics g, int l, int a, int b) {
+    public void paint(Graphics g, int l, int a, int b,Camera c) {
         int x, y;
         //设置画笔颜色为红色
         g.setColor(Color.RED);
@@ -47,16 +47,16 @@ public class Snake {
             y = snake_body[i].getY();
             //在（x，y）处画一个长为l，宽为l的长方形（a,b为偏移值分别在x，y后面加上就可以）
             //下面也是用同样的方法画图
-            g.fillRect(x * l + a, y * l + b, l, l);
+            g.fillRect((x-c.getLocation().getX()) * l + a, (y-c.getLocation().getY()) * l + b, l, l);
         }
        g.setColor(Color.white);
         x = snake_body[0].getX();
         y = snake_body[0].getY();
-        g.fillRect(x * l + a + l / 4 + 1, y * l + b + l / 4 + 1, l / 2, l / 2);
+        g.fillRect((x-c.getLocation().getX()) * l + a + l / 4 + 1, (y-c.getLocation().getY()) * l + b + l / 4 + 1, l / 2, l / 2);
         g.setColor(Color.black);
         x = snake_body[0].getX();
          y = snake_body[0].getY();
-        g.fillRect(x * l + a + l / 3 + 1, y * l + b + l / 3 + 1, l / 4, l / 4);
+        g.fillRect((x-c.getLocation().getX()) * l + a + l / 3 + 1, (y-c.getLocation().getY()) * l + b + l / 3 + 1, l / 4, l / 4);
     }
     //定向函数
     public void setDirection(int x) {

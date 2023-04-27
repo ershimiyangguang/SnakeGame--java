@@ -15,10 +15,6 @@ public class Camera {
         location.setY(head.getY()-10);
     }
 
-    public void paint(Graphics g,int l,int x,int y) {
-
-    }
-
     public Location getLocation() {
         return location;
     }

@@ -21,7 +21,7 @@ public class Food {
         if(counts==5)
         {
             for(int i=0;i<foods.length;i++) {
-                g.fillRect((foods[i].x )* l + x, (foods[i].y) * l + y, l, l);
+                g.fillRect((foods[i].x-c.getLocation().getX() )* l + x, (foods[i].y-c.getLocation().getY()) * l + y, l, l);
             }
         }
         else {
