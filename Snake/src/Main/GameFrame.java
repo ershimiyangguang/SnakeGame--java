@@ -9,7 +9,7 @@ import java.util.Timer;
 
 
 import Object.*;
-import ButtonCollection.*;
+import Button.*;
 
 
 public class GameFrame extends JFrame implements KeyListener {
@@ -158,10 +158,6 @@ public class GameFrame extends JFrame implements KeyListener {
 
     public GameScene getGameScene() {
         return game_scene;
-    }
-
-    public void setGameScene(GameScene game_scene) {
-        this.game_scene = game_scene;
     }
 
     public void reSize() {

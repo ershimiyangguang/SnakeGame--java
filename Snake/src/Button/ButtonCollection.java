@@ -1,4 +1,4 @@
-package ButtonCollection;
+package Button;
 
 import Main.GameFrame;
 

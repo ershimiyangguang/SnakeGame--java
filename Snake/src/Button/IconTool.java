@@ -1,4 +1,4 @@
-package ButtonCollection;
+package Button;
 import java.net.URL;
 import java.awt.Point;
 import java.awt.Image;
