@@ -40,5 +40,10 @@ public class Location {
         if (location.getX()==x && location.getY()==y) return true;
         else return false;
     }
-
+    public Boolean isOverlap (Location[] locations ,int length) {
+        for (int i = 0; i < length; i++) {
+            if (this.equals(locations[i])) return true;
+        }
+        return false;
+    }
 }

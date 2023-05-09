@@ -10,23 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2d65c696-e721-4cd6-a484-28322fea7b2d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023_4_24_9_47_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023_4_24_9_47__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023_4_27_13_58_[Changes]1/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023_4_27_13_58__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023_4_27_13_58__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023_4_27_13_58__Changes_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023_4_27_14_00_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2023_4_27_14_00__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Snake/src/ButtonCollection/Button.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Snake/src/ButtonCollection/ButtonCollection.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Snake/src/ButtonCollection/Exit.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Snake/src/ButtonCollection/IconTool.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Snake/src/ButtonCollection/Option.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Snake/src/ButtonCollection/Play.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Snake/src/ButtonCollection/Replay.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Snake/src/ButtonCollection/ToMain.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Snake/src/Main/GameFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/Snake/src/Main/GameFrame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +34,7 @@
     <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="test" />
+        <entry key="$PROJECT_DIR$" value="develop" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -111,7 +95,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "C:/Users/150142/Desktop/java/code",
+    "last_opened_file_path": "C:/Users/150142/Desktop/java/SnakeGame--java",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -163,13 +147,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1678953214010</updated>
-    </task>
-    <task id="LOCAL-00001" summary="隐藏">
-      <created>1679965946611</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1679965946611</updated>
     </task>
     <task id="LOCAL-00002" summary="隐藏">
       <created>1679966016118</created>
@@ -507,7 +484,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681015608897</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="bc">
+      <created>1683512386254</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1683512386254</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
