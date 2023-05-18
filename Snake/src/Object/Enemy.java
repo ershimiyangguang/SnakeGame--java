@@ -12,7 +12,7 @@ public class Enemy {
     public Enemystate enemystate;
     boolean  attack_direction; //攻击的方向
     int escape_direction;  //逃跑的方向
-    Rectangle []attack_range =new Rectangle[5];
+    Location attack_range []= new Location[5];
 
     private int damage;
     //伤害
@@ -32,10 +32,10 @@ public class Enemy {
 
     }
     //攻击蛇
-    public void attack(Snake snake, GameFrame frame,int x,int y,int l) {
+    public void attack(Snake snake, GameFrame frame) {
         if(enemystate==Enemystate.attack) {    //当敌人状态为攻击时，判断敌人是否攻击到蛇//
-             for (int i = 0; i < snake.getLength(); i++) {
-                if (detection(location,snake.getSnake_body(),l)) {
+            for (int i = 0; i < snake.getLength(); i++) {
+                if (detection(location,snake)) {
                     snake.setLength(snake.getLength() - 1);//如果攻击到蛇，则蛇的长度-1，并且敌人的状态改为逃跑
                     enemystate =Enemystate. escape;
                     break;
@@ -86,7 +86,7 @@ public class Enemy {
                 }
                 else
                 { location.setY(location.getY() - 1);
-                escape_direction=-2;
+                    escape_direction=-2;
                 }
             } else {
                 if (attack_direction)
@@ -122,7 +122,7 @@ public class Enemy {
 
         }
         else{
-            Location location2[] = new Location[1000];
+            Location location2[] = new Location[100];
             location2 = snake.getSnake_body();
             Rectangle r = new Rectangle((location.getX()-4)*30,(location.getY()-4),30,30);
             if(r.contains(location2[0].getX(),location2[0].getY())){
@@ -131,58 +131,58 @@ public class Enemy {
         }
 
     }
-     public boolean detection (Location enemy,Location [] snake,int l) {
-         if (enemystate == Enemystate.attack) {
-             for (int i = 0; i < 5; i++) {
-                 attack_range[i].x = enemy.getX() * l;
-                 attack_range[i].y = enemy.getY() * l;
-                 attack_range[i].height = l;
-                 attack_range[i].width = l;
-             }
-             attack_range[1].y = (enemy.getY() - 1) * l;
-             attack_range[2].y = (enemy.getY() + 1) * l;
-             attack_range[3].x = (enemy.getX() - 1) * l;
-             attack_range[4].x = (enemy.getX() + 1) * l;
-             for (int i = 1; i < 5; i++) {
-                 for (int j = 0; j < snake.length; j++)
-                     if (attack_range[i].contains(snake[j].getX() * l, snake[j].getY() * l, l, l)) {
-                         return true;
-                     }
-             }
+    public boolean detection (Location enemy,Snake snake) {
+        Location location2[]= new Location[1000];
+        location2=snake.getSnake_body();
+        if (enemystate == Enemystate.attack) {
+            for(int i=0;i<5;i++){
+                attack_range[i]=new Location();
+            }
+            for (int i = 0; i < 5; i++) {
+                attack_range[i].setX(enemy.getX() );
+                attack_range[i].setY(enemy.getY() );
+
+            }
+            attack_range[1].setY(enemy.getY()-1);
+            attack_range[2].setY(enemy.getY()+1);
+            attack_range[3].setX(enemy.getX()-1);
+            attack_range[4].setX(enemy.getX()+1);
+            for (int i = 1; i < 5; i++) {
+                for (int j = 0; j < snake.getLength(); j++)
+                    if (attack_range[i].equals(location2[j])) {
+                        return true;
+                    }
+            }
 
 
-         }
-         else if(enemystate==Enemystate.escape){
-            Rectangle r=new Rectangle(location.getX()*l,location.getY(),l,l) ;
-            for(int i=0;i<snake.length;i++){
-                if(r.contains(snake[i].getX(),snake[i].getY(),l,l))
+        }
+        else if(enemystate==Enemystate.escape){
+            for(int i=0;i<snake.getLength();i++){
+                if(location2[i].equals(enemy))
                     return true;
             }
 
-         }
-         return false;
-
-     }
-
-    public void paint(Graphics gImage, int x, int y, int l, Snake snake) {
-        if(location.getX()>=0&&location.getX()<=31&&location.getY()>=0&&location.getY()<=21)
-        {
-        gImage.setColor(Color.BLACK);
-        gImage.fillRect((location.getX()*l)+x,(location.getY()*l+y),l,l);}
-
-        if (enemystate ==Enemystate. attack){
-            Location location1[] = new Location[1000];
-            location1 = snake.getSnake_body();
-            Rectangle r = new Rectangle((location.getX()-4)*l,(location.getY()-4)+y,l,l);
-            if(r.contains(location1[0].getX(),location1[0].getY())){
-                gImage.setColor(Color.red);
-                for(int i=1;i<5;i++){
-                    gImage.fillRect((int)attack_range[i].getX()+x,(int) attack_range[i].getY()+y,l,l);
-                }
-            }
         }
+        return false;
 
     }
 
+    public void paint(Graphics gImage, int x, int y, int l, Snake snake) {
+        if (location.getX() >= 0 && location.getX() <= 31 && location.getY() >= 0 && location.getY() <= 21) {
+            gImage.setColor(Color.BLACK);
+            gImage.fillRect((location.getX() * l) + x, (location.getY() * l + y), l, l);
+        }
 
+        if (enemystate == Enemystate.attack) {
+            for (int i = 1; i <=4; i++) {
+                gImage.setColor(Color.yellow);
+                gImage.fillRect((attack_range[i].getX()*l)+x,(attack_range[i].getY()*l)+y,l,l);
+            }
+
+
+        }
+
+    }
 }
+
+

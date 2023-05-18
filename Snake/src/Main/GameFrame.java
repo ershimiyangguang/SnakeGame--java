@@ -40,7 +40,7 @@ public class GameFrame extends JFrame implements KeyListener {
                     //敌人移动
                     enemy[i].move(snake);
                     //敌人攻击
-                    enemy[i].attack(snake,GameFrame.this,x,y,l);
+                    enemy[i].attack(snake,GameFrame.this);
                 }
                 //检测蛇是否撞到墙壁或者自己
                 snake.checkAlive(GameFrame.this);
